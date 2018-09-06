@@ -2,14 +2,13 @@ module WeatherApi where
 
 import Prelude
 
+import Affjax as Ajax
+import Affjax.ResponseFormat as ResponseFormat
 import Data.Either (Either(..))
 import Data.List.Types (NonEmptyList)
 import Data.Maybe (Maybe)
 import Effect.Aff (Aff)
 import Foreign (ForeignError)
-
-import Affjax as Ajax
-import Affjax.ResponseFormat as ResponseFormat
 import Simple.JSON as JSON
 
 type Url
@@ -79,17 +78,15 @@ makeRequest parser url = do
       Right json -> pure $ Downloaded json
 
 getWeather :: Token -> String -> Aff (DownloadStatus WeatherResult)
-getWeather apiKey location = makeRequest parser url
+getWeather apiKey location = makeRequest JSON.readJSON url
   where
-    parser = JSON.readJSON
     url ::
       Url
     url = buildUrl Weather apiKey location
 
 getForecast :: Token -> String -> Aff (DownloadStatus ForecastResult)
-getForecast apiKey location = makeRequest parser url
+getForecast apiKey location = makeRequest JSON.readJSON url
   where
-    parser = JSON.readJSON
     url ::
       Url
     url = buildUrl Forecast apiKey location
