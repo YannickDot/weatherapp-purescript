@@ -1,0 +1,24 @@
+{
+  "name": "weather-forecast",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "watch": "parcel -p 8080 index.html",
+    "build": "parcel index.html",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run watch"
+  },
+  "author": "Yannick Spark <sparky.creativespace@gmail.com> (https://sparkyspace.com/)",
+  "license": "ISC",
+  "dependencies": {
+    "purty": "^3.0.3",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "snabbdom": "^0.7.2",
+    "snabbdom-transition": "^0.2.0"
+  }
+}

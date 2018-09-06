@@ -1,0 +1,23 @@
+{
+  "name": "weather-forecast",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "output"
+  ],
+  "dependencies": {
+    "purescript-prelude": "^4.1.0",
+    "purescript-console": "^4.1.0",
+    "purescript-effect": "^2.0.0",
+    "purescript-react-basic": "git://github.com/lumihq/purescript-react-basic.git#^2.0.1",
+    "purescript-aff": "^5.0.2",
+    "purescript-simple-json": "^4.2.0",
+    "purescript-affjax": "^7.0.0",
+    "purescript-hedwig": "^0.1.1",
+    "purescript-halogen": "^4.0.0"
+  },
+  "devDependencies": {
+    "purescript-psci-support": "^4.0.0"
+  }
+}
